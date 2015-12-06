@@ -1,10 +1,12 @@
 #Table 4
 #2013, ApJ 767, 50
+#	Moustakas, John; Coil, Alison L.; Aird, James; Blanton, Michael R.; Cool, Richard J.; Eisenstein, Daniel J.; Mendez, Alexander J.; Wong, Kenneth C.; Zhu, Guangtun; Arnouts, Stéphane
+#
 #PRIMUS Stellar Mass Function for All, Quiescent, and Star-forming Galaxies
-#http://iopscience.iop.org/0004-637X/767/1/50/suppdata/apj464557t4_ascii.txt
 #	0.20 < z < 0.30	0.30 < z < 0.40	0.40 < z < 0.50	0.50 < z < 0.65	0.65 < z < 0.80	0.80 < z < 1.00	
+#errors not included, more info in full paper
 #	
-# units: M* in M_o, log 10 Phi/Mpc^3  (no h) 
+# units: M* in [M_o/h70^2], log 10 Phi in [h70^3/Mpc^3/dex]   
 #All	
 #	
 8.8 	 -2.009  999      999         999      999        999
@@ -108,4 +110,5 @@
 11.8	 999      999       999	999       -4.94    -5.42
 12.0	 999      999       999	999       -5.48    999
 
-#Notes. PRIMUS stellar mass function at z = 0.2-1 for all, star-forming, and #quiescent galaxies. The units of Phi are 10-4 Mpc-3 dex-1, sigmacv is the #estimated 1sigma uncertainty in Phi due to sample variance, and N is the number of #galaxies in each stellar mass bin.
+#Notes. PRIMUS stellar mass function at z = 0.2-1 for all, star-forming, and #quiescent galaxies. 
+#The units of Phi are 10-4 Mpc-3 dex-1, sigmacv is the #estimated 1sigma uncertainty in Phi due to sample variance, and N is the number of #galaxies in each stellar mass bin.
