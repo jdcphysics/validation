@@ -4,7 +4,7 @@
  in codes/StellarMass/
  
    code to compare simulated data stellar mass function with observed
-   stellar mass function from PRIMUS, in several redshift bins from 0.2-1.0
+   stellar mass function from PRIMUS or SDSS-GALEX, in several redshift bins from 0.01-1.0
    makes plot with both on it
   
    2 files plus your simulated data are needed:
