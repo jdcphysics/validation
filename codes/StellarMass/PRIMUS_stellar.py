@@ -6,6 +6,7 @@ def overview():
    """
 plots a simulated data set stellar mass function (histogram) along with that in
 Moustakas et al, 2013 (points)
+for z<0.2, this is SDSS-GALEX data, for z>0.2 it is PRIMUS data
 
 FILES NEEDED (3 including this one):
  import this file to run commands
@@ -50,7 +51,7 @@ INPUT SIMULATION DATA FILE:
   log10 M_* [M_o]   sfr [M_o/Gyr]    ra     dec   redshift
 
 INPUT OBSERVATIONAL DATA FILE:
-source for data in file Mous_13_table4.txt is
+source for data in file Mous_13_table4.txt and z<0.2 data used is
 arXiv:1301.1688, ApJ 2013, 767, 50
 Moustakas, J.,Coil, A. L., Aird, J., Blanton, M. R., Cool, R. J., Eisenstein, D. J., Mendez, A. J., Wong, K. C., Zhu, G., Arnouts, S.
 PRIMUS: Constraints on Star Formation Quenching and Galaxy Merging, and the Evolution of the Stellar Mass Function from z = 0-1
@@ -100,10 +101,25 @@ def phi_moutab(zcen=0.45,addcolor=0):
    """
    # now need to find right redshift and type
    # first redshift
-   zrange = N.array([0.2,0.3,0.4,0.5,0.65,0.8,1.0])
+   zrange = N.array([0.01,0.2,0.3,0.4,0.5,0.65,0.8,1.0])
    jjz = N.nonzero(zcen>=zrange)[0]
-   if ((jjz.size ==0)|(zcen>1.0)):
+   if ((zcen>1.0)|(jjz.size==0)):
      print "z = %3.2f not in range"%(zcen)
+     return()
+   if (jjz.size==1):
+     # use GALEX-SDSS
+     print "using GALEX-SDSS"
+     logm_mou = 9.0+ N.arange(31)*1./10.  #Primus table 3, Moustakas ++13
+    
+     if (addcolor==0): #all galaxies
+         logphi = N.array([-1.899,-1.923,-1.970,-2.031,-2.055,-2.106,-2.144,-2.179,-2.188,-2.216,-2.234,-2.235,-2.262,-2.252,-2.285,-2.317,-2.365,-2.419,-2.504,-2.607,-2.728,-2.888,-3.104,-3.332,-3.606,-3.953,-4.363,-4.778,-5.255,-5.87,-6.49])
+
+     if (addcolor==1): # red
+         logphi = N.array([-2.495,-2.486,-2.485,-2.523,-2.576,-2.603,-2.634,-2.642,-2.652,-2.655,-2.649,-2.614,-2.607,-2.5640,-2.5640,-2.5800,-2.6050,-2.6450,-2.7050,-2.7860,-2.8840,-3.0190,-3.2090,-3.4130,-3.6670,-4.002,-4.401,-4.806,-5.296,-5.93,-6.61])
+     if (addcolor==2): #blue
+          logphi = N.array([-2.026,-2.062,-2.129,-2.201,-2.211,-2.272,-2.313,-2.362,-2.371,-2.4120,-2.4450,-2.4700,-2.5240,-2.5410,-2.6090,-2.6600,-2.7370,-2.8110,-2.9340,-3.0770,-3.2500,-3.4720,-3.769,-4.102,-4.487,-4.930,-5.437,-5.98,-6.30,-6.77,-7.09])
+
+     return(logm_mou,logphi,jjz)
    if (jjz.size > 1):
       jjz = jjz.max()
    print "using PRIMUS range %3.2f < z < %3.2f "%(zrange[jjz],zrange[jjz+1])
@@ -206,7 +222,7 @@ def teststellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,boxside=100,
    
    galkind =("all","red","blue")
    logm_mou,logphi,jjz = phi_moutab(zcen,addcolor)
-   return(bins,ngalact,logm_mou,logphi,jjz)
+   return(bins,ngalact,logm_mou,logphi,jjz,nhist.sum())
 
 
 def plot3sep(zcen=0.45,fname="galshort.dat",hval=0.67,boxside=100,ramin=-2,ramax=-2,decmin=2,decmax=-2,delz=0.02):
@@ -225,13 +241,16 @@ def plot3sep(zcen=0.45,fname="galshort.dat",hval=0.67,boxside=100,ramin=-2,ramax
       ax.set_xlim(8.8,12.0)
       ax.set_ylim(1.e-5,0.1)
       ax.set_yscale("log")        
-      bin_centers,ngalact,logm_mou,logphi,jjz=teststellar(zcen,i,fname,hval,boxside,ramin,ramax,decmin,decmax,delz)
+      bin_centers,ngalact,logm_mou,logphi,jjz,ngal=teststellar(zcen,i,fname,hval,boxside,ramin,ramax,decmin,decmax,delz)
       ax.step(bin_centers, ngalact,collist[i],label=r'simulation $z_{sim}$= %3.2f'%(zcen))
 
-      zrange = N.array([0.2,0.3,0.4,0.5,0.65,0.8,1.0])      
-      ax.plot(logm_mou,10**logphi,cshapelist[i],label=r'PRIMUS %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]))
-      ax.text(9.2,2.e-4,collfull[i],color=collist[i])
-
+      zrange = N.array([0.01,0.2,0.3,0.4,0.5,0.65,0.8,1.0])
+      if (jjz==0):
+        ax.plot(logm_mou,10**logphi,cshapelist[i],label=r'SDSS-GALEX %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]))        
+      if (jjz>0):  
+        ax.plot(logm_mou,10**logphi,cshapelist[i],label=r'PRIMUS %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]))
+      ax.text(9.2,2.e-4,coltype[i],color=collist[i])
+      ax.text(9.2,1.e-4,'%d galaxies'%(ngal),color=collist[i])
       ax.legend(loc=3)
       ax.set_yscale("log")
       ax.set_xlabel("$M_* [M_o/h_{70}^2]$")
