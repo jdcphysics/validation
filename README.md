@@ -13,6 +13,7 @@
      
          histograms an input simulated data set (M*, sfr) with
          Moustakas et al 2013 PRIMUS data, redshifts 0.2-1.0.
+         Moustakas et al 2013 SDSS-GALEX data, redshifts 0.01-0.2
          
      Mous_13_table4.txt 
      
