@@ -125,7 +125,7 @@ def phi_moutab(zcen=0.45,addcolor=0):
    print "using PRIMUS range %3.2f < z < %3.2f "%(zrange[jjz],zrange[jjz+1])
    
    ff = open("Mous_13_table4.txt")
-   phimou = N.loadtxt(ff, usecols=(0,jjz+1))
+   phimou = N.loadtxt(ff, usecols=(0,jjz))
    ff.close()
    # Now color, just need to start at right place
    if (addcolor==0):
