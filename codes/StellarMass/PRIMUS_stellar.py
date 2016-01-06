@@ -197,7 +197,7 @@ def teststellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,boxside=100,
    if (boxside>0):
        print "using periodic box, side %8.2f Mpc/h"%(boxside)
        vol = boxside*boxside*boxside
-
+       redz = zcen
    #units:
    #Moustakas box is in units of [Mpc/h70]^3, we have [Mpc/h]^3,
    #    so divide volume by (h/h70)^3 = (h/(h/0.7))^3 = 0.7^3
@@ -209,9 +209,9 @@ def teststellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,boxside=100,
    jj = N.arange(logstell.size)
    #note color cut is assuming h70's in units
    if (addcolor==1):
-     jj = N.nonzero(N.log10(sfr+1.e-16)<-0.49+0.65*(logstell-10)+1.07*(zcen-0.1))[0]
+     jj = N.nonzero(N.log10(sfr+1.e-16)<-0.49+0.65*(logstell-10)+1.07*(redz-0.1))[0]
    if (addcolor==2):  
-        jj = N.nonzero(N.log10(sfr+1.e-16)>=-0.49+0.65*(logstell-10)+1.07*(zcen-0.1))[0]
+        jj = N.nonzero(N.log10(sfr+1.e-16)>=-0.49+0.65*(logstell-10)+1.07*(redz-0.1))[0]
    logstell = logstell[jj]     
 
    nbin = 50
