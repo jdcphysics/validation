@@ -194,6 +194,7 @@ def teststellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,boxside=100,
         (redz<zcen+delz)&(redz>zcen-delz))[0]
        sfr = sfr[jj]
        logstell = logstell[jj]
+       redz     = redz[jj]
    if (boxside>0):
        print "using periodic box, side %8.2f Mpc/h"%(boxside)
        vol = boxside*boxside*boxside
