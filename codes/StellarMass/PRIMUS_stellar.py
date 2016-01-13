@@ -1,17 +1,20 @@
 __author__ = "joanne cohn"
 __email__  = "jcohn@berkeley.edu"
-__version__= "1.0"
+__version__= "1.1"
 
 def overview():
    """
 plots a simulated data set stellar mass function (histogram) along with that in
-Moustakas et al, 2013 (points)
+Moustakas et al, 2013 (points plus error bars)
 for z<0.2, this is SDSS-GALEX data, for z>0.2 it is PRIMUS data
 
-FILES NEEDED (3 including this one):
- import this file to run commands
- have file "Mous_13_table4.txt" (in same directory)
- have your simulation data file fname (explained below), e.g. 'galaxies.dat'
+FILES NEEDED (5 including this one):
+ 1. import this file to run commands
+ have files in this directory (ascii files):
+ 2. Mous_13_table4.txt 
+ 3. Mous_13_errplus.txt (new to 1.1) 
+ 4. Mous_13_errminus.txt  (new to 1.1)
+ 5. have your simulation data file fname (explained below), e.g. 'galaxies.dat'
 
 USAGE:
 
@@ -114,18 +117,31 @@ def phi_moutab(zcen=0.45,addcolor=0):
      if (addcolor==0): #all galaxies
          logphi = N.array([-1.899,-1.923,-1.970,-2.031,-2.055,-2.106,-2.144,-2.179,-2.188,-2.216,-2.234,-2.235,-2.262,-2.252,-2.285,-2.317,-2.365,-2.419,-2.504,-2.607,-2.728,-2.888,-3.104,-3.332,-3.606,-3.953,-4.363,-4.778,-5.255,-5.87,-6.49])
 
+         logphi_plus = N.array([0.017,0.017,0.015,0.015,0.014,0.012,0.012,0.012,0.010,0.0086,0.0080,0.0069,0.0063,0.0056,0.0051,0.0047,0.0044,0.0041,0.0040,0.0039,0.0040,0.0043,0.0049,0.0059,0.0080,0.012,0.020,0.033,0.060,0.010,0.030])
+         logphi_minus = N.array([-0.017,-0.016,-0.015,-0.014,-0.013,-0.012,-0.011,-0.012,-0.010,-0.0084,-0.0078,-0.0068,-0.0062,-0.0056,-0.0051,-0.0046,-0.0044,-0.0041,-0.0040,-0.0039,-0.0040,-0.0043,-0.0048,-0.0059,-0.0079,-0.012,-0.019,-0.031,-0.053,-0.010,-0.020])         
      if (addcolor==1): # red
          logphi = N.array([-2.495,-2.486,-2.485,-2.523,-2.576,-2.603,-2.634,-2.642,-2.652,-2.655,-2.649,-2.614,-2.607,-2.5640,-2.5640,-2.5800,-2.6050,-2.6450,-2.7050,-2.7860,-2.8840,-3.0190,-3.2090,-3.4130,-3.6670,-4.002,-4.401,-4.806,-5.296,-5.93,-6.61])
+         logphi_plus = N.array([0.048,0.044,0.038,0.037,0.033,0.030,0.026,0.028,0.021,0.018,0.015,0.013,0.011,0.0089,0.0077,0.0069,0.0062,0.0057,0.0053,0.0050,0.0049,0.0050,0.0055,0.0065,0.0085,0.013,0.021,0.034,0.063,0.10,0.40])       
+         logphi_minus = N.array([-0.043,-0.041,-0.035,-0.034,-0.031,-0.028,-0.025,-0.026,-0.020,-0.017,-0.015,-0.012,-0.011,-0.0087,-0.0076,-0.0068,0-.0061,-0.0056,-0.0052,-0.0050,-0.0049,-0.0050,-0.0054,-0.0064,-0.0084,-0.012,-0.020,-0.032,-0.056,-0.10,-0.20])                   
+              
      if (addcolor==2): #blue
           logphi = N.array([-2.026,-2.062,-2.129,-2.201,-2.211,-2.272,-2.313,-2.362,-2.371,-2.4120,-2.4450,-2.4700,-2.5240,-2.5410,-2.6090,-2.6600,-2.7370,-2.8110,-2.9340,-3.0770,-3.2500,-3.4720,-3.769,-4.102,-4.487,-4.930,-5.437,-5.98,-6.30,-6.77,-7.09])
+          logphi_plus = N.array([0.018,0.017,0.015,0.014,0.014,0.012,0.012,0.011,0.011,0.0092,0.0090,0.0079,0.0074,0.0071,0.0066,0.0063,0.0062,0.0059,0.0061,0.0064,0.0071,0.0085,0.011,0.016,0.024,0.042,0.079,0.20,0.30,0.60,1.000])      
+          logphi_minus = N.array([-0.017,-0.016,-0.015,-0.014,-0.013,-0.012,-0.012,0-.011,-0.011,-0.0090,-0.0088,-0.0078,-0.0072,-0.0070,-0.0065,-0.0062,-0.0061,-0.0059,-0.0060,-0.0063,-0.0070,-0.0084,-0.010,-0.015,-0.023,-0.038,-0.067,-0.10,-0.20,-0.30,-0.40])             
 
-     return(logm_mou,logphi,jjz)
+     return(logm_mou,logphi,logphi_plus,logphi_minus,jjz)
    if (jjz.size > 1):
       jjz = jjz.max()
    print "using PRIMUS range %3.2f < z < %3.2f "%(zrange[jjz],zrange[jjz+1])
    
    ff = open("Mous_13_table4.txt")
    phimou = N.loadtxt(ff, usecols=(0,jjz))
+   ff.close()
+   ff = open("Mous_13_errminus.txt")
+   phimou_minus = N.loadtxt(ff, usecols=(0,jjz))
+   ff.close()
+   ff = open("Mous_13_errplus.txt")
+   phimou_plus = N.loadtxt(ff, usecols=(0,jjz))
    ff.close()
    # Now color, just need to start at right place
    if (addcolor==0):
@@ -136,10 +152,14 @@ def phi_moutab(zcen=0.45,addcolor=0):
      jjkeep = N.arange(61,93)   #blue
    logm_mou = phimou[jjkeep,0]
    logphi   = phimou[jjkeep,1]
+   logphi_plus = phimou_plus[jjkeep,1]
+   logphi_minus = phimou_minus[jjkeep,1]
    jj = N.nonzero(logphi<0)[0]
    logm_mou = logm_mou[jj]
    logphi   = logphi[jj]
-   return(logm_mou,logphi,jjz)
+   logphi_plus = logphi_plus[jj]
+   logphi_minus = logphi_minus[jj]
+   return(logm_mou,logphi,logphi_plus,logphi_minus,jjz)
  
 def teststellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,boxside=100,ramin=-2,ramax=-2,decmin=2,decmax=-2,delz=0.02):
    """
@@ -222,8 +242,9 @@ def teststellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,boxside=100,
    ngalact = nhist*1./(vol*(bins[1]-bins[0]))
    
    galkind =("all","red","blue")
-   logm_mou,logphi,jjz = phi_moutab(zcen,addcolor)
-   return(bins,ngalact,logm_mou,logphi,jjz,nhist.sum())
+   logm_mou,logphi,logphip,logphim,jjz = phi_moutab(zcen,addcolor)
+  
+   return(bins,ngalact,logm_mou,logphi,logphip,logphim,jjz,nhist.sum())
 
 
 def plot3sep(zcen=0.45,fname="galshort.dat",hval=0.67,boxside=100,ramin=-2,ramax=-2,decmin=2,decmax=-2,delz=0.02):
@@ -237,21 +258,24 @@ def plot3sep(zcen=0.45,fname="galshort.dat",hval=0.67,boxside=100,ramin=-2,ramax
     collfull=("all galaxies","red galaxies","blue galaxies")
     collist=('k','r','b')
     cshapelist=('ks','rs','bs')
+    zrange = N.array([0.01,0.2,0.3,0.4,0.5,0.65,0.8,1.0])    
     for i in range(3):
       f,ax = plt.subplots(1,1)
-      ax.set_xlim(8.8,12.0)
-      ax.set_ylim(1.e-5,0.1)
-      ax.set_yscale("log")        
-      bin_centers,ngalact,logm_mou,logphi,jjz,ngal=teststellar(zcen,i,fname,hval,boxside,ramin,ramax,decmin,decmax,delz)
+      bin_centers,ngalact,logm_mou,logphi,logphip,logphim,jjz,ngal=teststellar(zcen,i,fname,hval,boxside,ramin,ramax,decmin,decmax,delz)
       ax.step(bin_centers, ngalact,collist[i],label=r'simulation $z_{sim}$= %3.2f'%(zcen))
-
-      zrange = N.array([0.01,0.2,0.3,0.4,0.5,0.65,0.8,1.0])
+      
+      phiplus = 10**(logphi+logphip)-10**(logphi)
+      phiminus = 10**(logphi+logphim)-10**(logphi)        
       if (jjz==0):
-        ax.plot(logm_mou,10**logphi,cshapelist[i],label=r'SDSS-GALEX %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]))        
+        #ax.plot(logm_mou,10**logphi,cshapelist[i],label=r'SDSS-GALEX %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]))
+        ax.errorbar(logm_mou,10**logphi,yerr=[-phiminus,phiplus],xerr=0.0,fmt=' ',marker='s',color=collist[i],label=r'SDSS-GALEX %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]) )          
       if (jjz>0):  
-        ax.plot(logm_mou,10**logphi,cshapelist[i],label=r'PRIMUS %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]))
+          #ax.plot(logm_mou,10**logphi,cshapelist[i],label=r'PRIMUS %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]),)
+        ax.errorbar(logm_mou,10**logphi,yerr=[-phiminus,phiplus],xerr=0.0,fmt=' ',marker='s',color=collist[i],label=r'PRIMUS %3.2f<z<%3.2f'%(zrange[jjz],zrange[jjz+1]) )
       ax.text(9.2,2.e-4,coltype[i],color=collist[i])
       ax.text(9.2,1.e-4,'%d galaxies'%(ngal),color=collist[i])
+      ax.set_xlim(8.8,12.0)
+      ax.set_ylim(1.e-5,0.1)
       ax.legend(loc=3)
       ax.set_yscale("log")
       ax.set_xlabel("$M_* [M_o/h_{70}^2]$")
