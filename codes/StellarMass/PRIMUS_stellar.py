@@ -104,6 +104,7 @@ def phi_moutab(zcen=0.45,addcolor=0):
    """
    # now need to find right redshift and type
    # first redshift
+   print "using FSPS stellar masses"
    zrange = N.array([0.01,0.2,0.3,0.4,0.5,0.65,0.8,1.0])
    jjz = N.nonzero(zcen>=zrange)[0]
    if ((zcen>1.0)|(jjz.size==0)):
