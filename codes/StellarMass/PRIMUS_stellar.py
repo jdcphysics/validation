@@ -263,7 +263,7 @@ def plot3sep(zcen=0.45,fname="galshort.dat",hval=0.67,boxside=100,ramin=-2,ramax
     for i in range(3):
       f,ax = plt.subplots(1,1)
       bin_centers,ngalact,logm_mou,logphi,logphip,logphim,jjz,ngal=teststellar(zcen,i,fname,hval,boxside,ramin,ramax,decmin,decmax,delz)
-      ax.step(bin_centers, ngalact,collist[i],label=r'simulation $z_{sim}$= %3.2f'%(zcen))
+      ax.step(bin_centers, ngalact,collist[i],where='mid',label=r'simulation $z_{sim}$= %3.2f'%(zcen))
       
       phiplus = 10**(logphi+logphip)-10**(logphi)
       phiminus = 10**(logphi+logphim)-10**(logphi)        
