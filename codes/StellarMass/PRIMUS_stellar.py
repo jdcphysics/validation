@@ -150,7 +150,7 @@ def phi_moutab(zcen=0.45,addcolor=0):
    if (addcolor==1):
      jjkeep = N.arange(33,61)  #red
    if (addcolor==2):
-     jjkeep = N.arange(61,93)   #blue
+     jjkeep = N.arange(61,94)   #blue
    logm_mou = phimou[jjkeep,0]
    logphi   = phimou[jjkeep,1]
    logphi_plus = phimou_plus[jjkeep,1]
