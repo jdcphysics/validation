@@ -1,0 +1,29 @@
+# 1/Vmax Method; stellar mass function; ALL, QUIESCENT, and STAR-FORMING galaxies at z=[2.0,2.5)
+# [Phi] = number / Mpc^3 / dex
+# Ho=70., Omega_lambda=0.7, Omega_matter=0.3
+# Muzzin, Marchesini, et al. 2013, ApJ, submitted
+#
+# EU_logPhi,EL_logPhi = upper and lower 1-sigma total random error of logPhi, 
+# including Poisson error, cosmic variance, and uncertainties from photometric 
+# redshift errors.
+#
+# A = all galaxies, Q = quiescent galaxies, SF = star-forming galaxies
+#
+# For any questions, contact Danilo Marchesini (danilo.marchesini@tufts.edu) or Adam Muzzin (muzzin@strw.leidenuniv.nl)
+#
+#                       A	 A        A	   Q	    Q	     Q	     SF	       SF       SF
+#  Mstar    E_Mstar  logPhi    EU_Phi   EL_Phi	logPhi    EU_Phi   EL_Phi  logPhi    EU_Phi   EL_Phi
+#
+   11.706    0.046   -5.352    0.377    0.524   -5.954    0.527    0.773   -5.477    0.399    0.490
+   11.613    0.046   -5.109    0.237    0.291   -5.954    0.567    0.785   -5.176    0.254    0.421
+   11.520    0.046   -5.255    0.375    0.285   -5.477    0.367    0.401   -5.653    0.627    0.486
+   11.427    0.046   -4.556    0.142    0.127   -4.954    0.199    0.238   -4.778    0.206    0.163
+   11.334    0.046   -4.091    0.097    0.134   -4.653    0.146    0.187   -4.230    0.105    0.138
+   11.241    0.046   -4.014    0.093    0.082   -4.840    0.297    0.173   -4.085    0.091    0.095
+   11.148    0.046   -3.811    0.072    0.078   -4.435    0.120    0.124   -3.929    0.076    0.083
+   11.055    0.046   -3.614    0.066    0.066   -4.169    0.089    0.099   -3.755    0.066    0.069
+   10.961    0.046   -3.549    0.058    0.060   -4.291    0.170    0.087   -3.636    0.064    0.077
+   10.868    0.046   -3.445    0.062    0.057   -4.056    0.079    0.077   -3.567    0.068    0.066
+   10.775    0.046   -3.332    0.050    0.049   -3.936    0.078    0.074   -3.456    0.051    0.055
+   10.682    0.046   -3.298    0.049    0.061   -3.920    0.077    0.079   -3.417    0.051    0.070
+   10.589    0.046   -3.275    0.057    0.057   -3.884    0.103    0.128   -3.398    0.058    0.060

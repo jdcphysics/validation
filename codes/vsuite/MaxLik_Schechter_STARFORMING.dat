@@ -1,0 +1,33 @@
+# Maximum Likelihood Method (STY); stellar mass function; STAR-FORMING galaxies with [z_low,z_high)
+# Ho=70., Omega_lambda=0.7, Omega_matter=0.3
+# Muzzin, Marchesini, et al. 2013, ApJ, submitted
+# Nobjects = number of objects into the calculation of the stellar mass function
+# Mlim = adopted limit in stellar mass (95% completenetess)
+# If errors are equal to "0.", it means that the low-mass end slope has been kept fixed
+# alpha = low-mass end slope of single Schechter function
+# alpha_1sU, alpha_1sL = upper and lower 1-sigma random error on alpha
+# alpha_1sUtot, alpha_1sLtot = upper and lower 1-sigma total random error on alpha, including uncertainties from photometric redshift random errors
+# M* = log of the characteristic stellar mass [Msun]
+# M*_1sU, M*_1sL = upper and lower 1-sigma random error on M* [dex]
+# M*_1sUtot, M*_1sLtot = upper and lower 1-sigma random error on M* [dex], including uncertainties from photometric redshift random errors
+# Phi* = normalization [10^-4/Mpc^3/dex] of single Schechter function
+# Phi*_1sU, Phi*_1sL = upper and lower 1-sigma random error on Phi*
+# Phi*_1sUtot, Phi*_1sLtot = upper and lower 1-sigma random error on Phi*, including uncertainties from photometric redshift random errors and cosmic variance
+# [see also Table 1 in Muzzin et al. 2013]
+# For any questions, contact Danilo Marchesini (danilo.marchesini@tufts.edu) or Adam Muzzin (muzzin@strw.leidenuniv.nl)
+#
+# z_low  z_high Nobjects  Mlim	 M*     M*_1sU M*_1sL M*_1sUtot M*_1sLtot  Phi*   Phi*_1sU  Phi*_1sL  Phi*_1sUtot  Phi*_1sLtot  alpha  alpha_1sU  alpha_1sL  alpha_1sUtot  alpha_1sLtot
+0.2      0.5    14182      8.37  10.81	0.03   0.03   0.03	0.03       11.35  0.76	    0.67      1.60	   1.51   	-1.34  0.01	  0.01	     0.01	   0.01
+0.2      0.5    14182      8.37  10.75	0.01   0.01   0.01	0.01	   13.58  0.15	    0.13      1.62	   1.59   	-1.3   0.	  0.	     0.		   0.
+0.5      1.0    32892      8.92  10.78	0.01   0.02   0.02	0.02       12.71  0.51	    0.29      1.07	   0.91		-1.26  0.01	  0.01	     0.02	   0.01
+0.5      1.0    32892      8.92  10.82	0.01   0.01   0.02	0.02       10.95  0.06	    0.08      0.73	   0.73   	-1.3   0.	  0.	     0.		   0.
+1.0      1.5    16504      9.48  10.76	0.02   0.02   0.02	0.02   	    8.87  0.50	    0.54      0.79	   0.86   	-1.21  0.03	  0.03	     0.03	   0.03
+1.0      1.5    16504      9.48  10.82	0.01   0.01   0.01	0.01        7.20  0.06	    0.11      0.49	   0.49   	-1.3   0.	  0.	     0.		   0.
+1.5      2.0     6271     10.03  10.85	0.02   0.03   0.02	0.04        5.68  0.60	    0.40      0.89	   0.65       	-1.16  0.07	  0.05	     0.14	   0.06
+1.5      2.0     6271     10.03  10.91	0.01   0.01   0.04	0.01        4.49  0.09	    0.09      0.39	   0.60   	-1.3   0.	  0.	     0.		   0.
+2.0      2.5     1708     10.54  10.80	0.05   0.05   0.06	0.06        3.72  0.25	    0.32      0.58	   0.66   	-0.53  0.22	  0.19	     0.28	   0.24
+2.0      2.5     1708     10.54  11.03	0.02   0.02   0.03	0.02	    2.01  0.08	    0.10      0.28	   0.30   	-1.3   0.	  0.	     0.		   0.
+2.5      3.0      636     10.76  11.06	0.13   0.10   0.14	0.12        1.39  0.35	    0.48      0.47	   0.57	       	-1.03  0.39	  0.39	     0.47	   0.47
+2.5      3.0      636     10.76  11.14	0.03   0.03   0.05	0.03        1.09  0.09	    0.09      0.22	   0.26   	-1.3   0.	  0.	     0.		   0.
+3.0      4.0      146     10.94  11.56	0.44   0.25   0.45	0.33        0.06  0.08	    0.05      0.12	   0.05   	-1.51  0.61	  0.55	     0.77	   0.62
+3.0      4.0      146     10.94  11.47	0.07   0.07   0.08	0.10        0.08  0.02	    0.02      0.05         0.03	        -1.3   0.	  0.	     0.		   0.

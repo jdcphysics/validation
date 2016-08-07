@@ -1,0 +1,22 @@
+# 1/Vmax Method; stellar mass function; ALL, QUIESCENT, and STAR-FORMING galaxies at z=[2.5,3.0)
+# [Phi] = number / Mpc^3 / dex
+# Ho=70., Omega_lambda=0.7, Omega_matter=0.3
+# Muzzin, Marchesini, et al. 2013, ApJ, submitted
+#
+# EU_logPhi,EL_logPhi = upper and lower 1-sigma total random error of logPhi, 
+# including Poisson error, cosmic variance, and uncertainties from photometric 
+# redshift errors.
+#
+# A = all galaxies, Q = quiescent galaxies, SF = star-forming galaxies
+#
+# For any questions, contact Danilo Marchesini (danilo.marchesini@tufts.edu) or Adam Muzzin (muzzin@strw.leidenuniv.nl)
+#
+#                       A	 A        A	   Q	    Q	     Q	     SF	       SF       SF
+#  Mstar    E_Mstar  logPhi    EU_Phi   EL_Phi	logPhi    EU_Phi   EL_Phi  logPhi    EU_Phi   EL_Phi
+#
+   11.770    0.092   -5.471    0.311    0.353   -6.249    0.534    0.778   -5.550    0.336    0.327
+   11.586    0.092   -5.045    0.232    0.179   -6.249    0.528    0.861   -5.045    0.204    0.187
+   11.403    0.092   -4.351    0.110    0.109   -5.103    0.185    0.194   -4.436    0.112    0.116
+   11.219    0.092   -4.047    0.090    0.088   -4.817    0.201    0.129   -4.128    0.088    0.090
+   11.036    0.092   -3.806    0.073    0.070   -4.436    0.110    0.096   -3.922    0.076    0.076
+   10.852    0.092   -3.454    0.063    0.108   -4.086    0.092    0.094   -3.569    0.067    0.138
