@@ -42,10 +42,12 @@
 
 in codes/vsuite
 
-   code to compare several observations to simulated data with stellar mass and star formation rate
-   plus required data files (for observations)
+   code to compare several observations to simulated data with stellar mass and star formation rate, plus required data files (for observations)
+
    generates 7 plots 
+
 4 are stellar mass functions:
+
 all, quiescent, star forming, and all on one page, compared to several observations described below
 (quiescent/star forming division at log sfr = -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1)+shiftval, for slopeval=shiftval=0,
 Moustakas et al eq 2), although many of papers listed use UVJ.
