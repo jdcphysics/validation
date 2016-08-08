@@ -46,16 +46,15 @@ in codes/vsuite
 
    generates 7 plots 
 
-4 are stellar mass functions:
+4 plots are stellar mass functions:
 
-all, quiescent, star forming, and all on one page, compared to several observations described below
-(quiescent/star forming division at log sfr = -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1)+shiftval, for slopeval=shiftval=0,
-Moustakas et al eq 2), although many of papers listed use UVJ.
+all, quiescent, star forming, and all 3 on one page, compared to several observations described below.
+(quiescent/star forming division at log sfr = -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1)+shiftval.  This is PRIMUS separation for slopeval=shiftval=0, i.e. Moustakas et al, 2013,  eq 2). many of the datasets use UVJ and are plotted as is for their star forming and quiescent galaxies.
 
-1 is stellar mass-sfr diagram [can be compared with e.g., Moustakas et al 2013, but not overplotted with it]
+1 plot is stellar mass-sfr diagram [can be compared with e.g., Moustakas et al 2013, but not overplotted with it]
 
-1 is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
+1 plot is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
 
-1 is stellar mass to halo mass diagram for central galaxies, compared to Behroozi, Wechsler, Conroy 2013 and Moster,Naab, White 2013 fits
+1 plot is stellar mass to halo mass diagram, compared to Behroozi, Wechsler, Conroy 2013 and Moster, Naab, White 2013 fits
 Behroozi,Wechsler,Conroy 2013 use Mvir
-Moster, Naab,White 2013 use M200
+Moster, Naab, White 2013 use M200
