@@ -1,6 +1,8 @@
 Please do email me if you have questions!
-    
-generate 7 plots using runsuite(): below.
+jcohn@berkeley.edu
+   
+runsuite in valid_suite.py 
+generates 7 plots using runsuite(): below.
 4 are stellar mass functions:
 all, quiescent, star forming, and all on one page, compared to several observations described below
 (quiescent/star forming division at log sfr = -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1)+shiftval, for slopeval=shiftval=0,
