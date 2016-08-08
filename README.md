@@ -58,3 +58,5 @@ all, quiescent, star forming, and all 3 on one page, compared to several observa
 1 plot is stellar mass to halo mass diagram, compared to Behroozi, Wechsler, Conroy 2013 and Moster, Naab, White 2013 fits
 Behroozi,Wechsler,Conroy 2013 use Mvir
 Moster, Naab, White 2013 use M200
+
+More info available at the top of valid_suite.py and in Cohn 2016, to appear (hopefully very soon!)
