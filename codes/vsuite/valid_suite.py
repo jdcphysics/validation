@@ -39,12 +39,19 @@ fname = "inputfile.dat" described below, can call it something else
  if you want.  ascii text.
 hval  = hubble constant
 omm = omega_matter (e.g. 0.31)
-slopeval = in sfr-M* bimodal diagram, **change in** slope of line to separate star-forming and quiescent from PRIMUS
-shiftval = change in shift of line between star forming and quiescent from PRIMUS
+slopeval = in sfr-M* bimodal diagram, **change in** slope of line to
+separate star-forming and quiescent from PRIMUS
+shiftval = change in shift of line between star forming and quiescent
+ from PRIMUS
+
+PRIMUS starforming and quiescent split by: 
+log SFR = log sfrmin -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1) + shiftval 
+
 boxside = in Mpc/h for fixed time, any negative number if light cone
 runname = string, such as "run0"
 if lightcone, delz,ramin,ramax,decmin,decmax listed next.
-if fixed time these arguments are ignored and are not needed.
+if fixed time these arguments (delz, ramin,ramax,decmin,decmax)
+are ignored and are not needed.
 
  files needed:
  from your simulation: requires "inputfile.dat" in the form of
@@ -104,18 +111,21 @@ Full references for papers:
 
        Henriques, Bruno M. B.; White, Simon D. M.; Thomas, Peter A.; Angulo, Raul; Guo, Qi; Lemson, Gerard; Springel, Volker; Overzier, Roderik
 Galaxy formation in the Planck cosmology - I. Matching the observed evolution of star formation rates, colours and stellar masses
- 2015, MNRAS,451,2663 
+ 2015
 http://arxiv.org/abs/1410.0365
+ MNRAS,451,2663 
 data tables: http://galformod.mpa-garching.mpg.de/public/LGalaxies/figures_and_data.php
 
     Moster, Naab & White, 2013
-Galactic star formation and accretion histories from matching galaxies to dark matter haloes, MNRAS, 428, 3121
+Galactic star formation and accretion histories from matching galaxies to dark matter haloes
 http://arxiv.org/abs/1205.5807
-     
+ MNRAS, 428, 3121
+      
     Moustakas, John, et al,
     PRIMUS: Constraints on Star Formation Quenching and Galaxy Merging, and the Evolution of the Stellar Mass Function from z = 0-1
     http://arxiv.org/abs/1301.1688
-
+    ApJ, 2013, 767, 50
+     
    Moutard et al, 2016
     The VIPERS Multi-Lambda Survey. II
 Diving with massive galaxies in 22 square degrees since z = 1.5
@@ -131,7 +141,7 @@ http://arxiv.org/abs/1303.4409
     arXiv:1309.5972
 	2014,ApJ,783,85
 
-    Another reference with with Tomczak et al is  the way that the data/catalogs were put
+    A companion reference to Tomczak et al is the description of how the data/catalogs were put
     together for the survey, to appear in Straatman et al, submitted.
 
 %%%%%%%%%%%%%%%%%
