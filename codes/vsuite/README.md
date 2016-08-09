@@ -5,29 +5,31 @@ jcohn@berkeley.edu
 More documentation to appear soon, by J. Cohn on arxiv--please cite arXiv (to appear) and datasets below, at %%%%,  if you use this work.
    
 how to get plots:
+
 runsuite in valid_suite.py 
+
 generates 7 plots using runsuite(): below.
 
-4 are stellar mass functions:
+1. 4 are stellar mass functions:
 all, quiescent, star forming, and all on one page, compared to several observations described below
 
 (quiescent/star forming division at log sfr = -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1)+shiftval, for slopeval=shiftval=0,
 Moustakas et al eq 2), although many of the observational papers listed use UVJ.
 
-1 is stellar mass-sfr diagram [can be compared with e.g., Moustakas et al 2013, but not overplotted with it]
+2. 1 is stellar mass-sfr diagram [can be compared with e.g., Moustakas et al 2013, but not overplotted with it]
 
-1 is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
+3. 1 is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
 
-1 is stellar mass to halo mass diagram for central galaxies
+4. 1 is stellar mass to halo mass diagram for central galaxies
 
 compared to Behroozi, Wechsler, Conroy 2013 (fit using Mvir)
 
 Moster,Naab, White 2013 (fit using M200)
 
 
-If you use this program, please reference the papers and people who measured
+Again, if you use this program, please reference the papers and people who measured
 all of these data!!
-They are listed below "%%%"
+They are listed below at "%%%"
 
 
 USAGE:
