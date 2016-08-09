@@ -1,7 +1,8 @@
-Please do email me if you have questions!
+Please do email me if you have questions/corrections/suggestions.
 
 jcohn@berkeley.edu
-More documentation to appear soon, by J. Cohn on arxiv.
+
+More documentation to appear soon, by J. Cohn on arxiv--please cite arXiv (to appear) and datasets below, at %%%%,  if you use this work.
    
 how to get plots:
 runsuite in valid_suite.py 
@@ -118,7 +119,9 @@ Diving with massive galaxies in 22 square degrees since z = 1.5
     table 2.
      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Full references for papers:
+
      Behroozi, P., Wechsler, R.H., Conroy, C.,
      The Average Star Formation Histories of Galaxies in Dark Matter Halos from z = 0-8,
      [http://arxiv.org/abs/1207.6105](http://arxiv.org/abs/1207.6105)
