@@ -179,10 +179,10 @@ def chiofz(zval=0.45,omm=0.31):
   return(tmp)
 
 
-def getsimstellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,omm=0.31,shiftval=0,slopeval=0,boxside=100,delz=0.02,ramin=-2,ramax=-2,decmin=2,decmax=-2,scatterval=0):
+def getsimstellar(zcen=0.45,addcolor=0,fname="galshort.dat",hval=0.67,omm=0.31,slopeval=0,shiftval=0,boxside=100,delz=0.02,ramin=-2,ramax=-2,decmin=2,decmax=-2,scatterval=0):
    """
    usage:
-   getsimstellar(zval,addcolor,inputfil,hval,omm,shiftval,slopeval,boxside,delz,ra_min,ra_max,dec_min,dec_max)
+   getsimstellar(zval,addcolor,inputfil,hval,omm,slopeval,shiftval,boxside,delz,ra_min,ra_max,dec_min,dec_max)
 
    zcen: central redshift for simulation
 
