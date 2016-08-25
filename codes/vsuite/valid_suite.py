@@ -153,8 +153,6 @@ plots together.
 model choices: BC03, Maraston (->BC03 0.14dexM*),Pegase, FSPS for sps model
 type of sf: ssp,burst (exponential), constant
 type of dust: Blanton-Roweis, Charlot-Fall, Calzetti
-bwc10: log(M*meas/M*true) = mu + kappa log10(M*true/10.e11.3)
- calzetti to br: kappa = 0.08, and also delta 1 in M*(BC) gives delta 0.92 in Calzetti (from Behroozi,Conroy, Wechsler,
  A comprehensive analysis of uncertainties affecting the stellar mass-halo mass
  relation for 0<z<4,
 http://arxiv.org/abs/1001.0015
