@@ -1,6 +1,6 @@
 __author__ = "joanne cohn"
 __email__  = "jcohn@berkeley.edu"
-__version__= "1.0"
+__version__= "1.1"  #updated BWC M*(Mh) from newer version of paper
 
 
 import numpy as N
@@ -1142,9 +1142,13 @@ def fpb(xval,zcen=0.25):
     """
     a = 1/(1+zcen)
     nu = N.exp(-4*a*a)
-    alpha      = -1.474 + 1.339*(a-1)*nu
-    delta      =  3.529 + (4.152*(a-1) +1.122*zcen)*nu
-    gamma      =  0.395 + (0.766*(a-1) +0.435*zcen)*nu
+    #alpha      = -1.474 + 1.339*(a-1)*nu #older version of BWC
+    #delta      =  3.529 + (4.152*(a-1) +1.122*zcen)*nu
+    #gamma      =  0.395 + (0.766*(a-1) +0.435*zcen)*nu
+    alpha      = -1.412 + 0.731*(a-1)*nu
+    delta      =  3.508 + (2.608*(a-1) -0.043*zcen)*nu
+    gamma      =  0.316 + (1.319*(a-1) +0.279*zcen)*nu
+
     tmp = -N.log10(10**(alpha*xval) +1) + delta* (N.log10(1+N.exp(xval)))**gamma /(1+N.exp(10**(-xval)))
 
     return(tmp)    
@@ -1162,8 +1166,11 @@ def getms_pb(mhbin,zcen=0.25):
      a= 1/(1+zcen)
      nu = N.exp(-4*a*a)
      
-     logm1      = 11.539 + (-1.751*(a-1)  -0.329*zcen)*nu
-     logepsilon = -1.785 + (-0.074*(a-1) + -0.048*zcen)*nu -0.179*(a-1)
+     #logm1      = 11.539 + (-1.751*(a-1)  -0.329*zcen)*nu older version of BWC
+     #logepsilon = -1.785 + (-0.074*(a-1) + -0.048*zcen)*nu -0.179*(a-1)
+     logm1      = 11.514 + (-1.793*(a-1)  -0.251*zcen)*nu
+     logepsilon = -1.777 + (-0.006*(a-1) + -0.0*zcen)*nu -0.119*(a-1)
+
      mstarmh   =logm1 + logepsilon + fpb(mhbin-logm1,zcen) - fpb(0,zcen)       
      return(10**(mstarmh-mhbin))
 
