@@ -783,7 +783,10 @@ def plot4tog(zcen=0.45,fname="galshort.dat",hval=0.7,omm=0.31,slopeval=0.,shiftv
       ismf = 6 #henriques #center of mass bin taken
       logm,phi,phip,phim,zhen = getphihen(zcen,i)
       if (logm[0]>1):
-         #used mpc/h with h = 0.67, converted to mpc in getphihen 
+         phi    *= hval*hval*hval
+         phip   *= hval*hval*hval
+         phim   *= hval*hval*hval
+         logm   -= 2*N.log10(hval)
          ax[i%2,i/2].errorbar(logm,phi,yerr=[phim,phip],xerr=0.0,fmt=' ',marker=smarkerlist[ismf],color=scollist[ismf],label="%s z=%3.2f "%(smftype[ismf],zhen))
          smfflag[ismf]=1
          zminlist[ismf] = zhen
@@ -951,6 +954,10 @@ def plot4sep(zcen=0.45,fname="galshort.dat",hval=0.7,omm=0.31,slopeval=0.,shiftv
       ismf = 6 #henriques
       logm,phi,phip,phim,zhen = getphihen(zcen,i)
       if (logm[0]>1):
+      	 phi    *= hval*hval*hval
+         phip   *= hval*hval*hval
+         phim   *= hval*hval*hval
+         logm   -= 2*N.log10(hval)
          ax.errorbar(logm,phi,yerr=[phim,phip],xerr=0.0,fmt=' ',marker=smarkerlist[ismf],color=scollist[ismf],label="%s z=%3.2f "%(smftype[ismf],zhen))
          smfflag[ismf]=1
          zminlist[ismf] = zhen
