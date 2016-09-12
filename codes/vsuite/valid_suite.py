@@ -583,7 +583,7 @@ points from figures 2 (all), figure 7 (quiescent and starforming)
 
 shift from maraston to BC03 by adding 0.14 to logM*
     """
-    hval = 0.673
+    #they have hval = 0.673 but have taken it out, units (mpc/h)^-3 and M*/h^2
     ctypelist=("all","quiescent","starforming")
     ff = open("henriques_%s.dat"%(ctypelist[addcolor]))
     gals = N.loadtxt(ff)
@@ -610,9 +610,9 @@ shift from maraston to BC03 by adding 0.14 to logM*
     jend = startpoints[jj+1,addcolor]
     if (jend<=jstart):
         return(N.array([1,1]),N.array([1,1]),0,0,0) #just junk :), e.g.all for z=3. 
-    mass = (10**gals[N.arange(jstart,jend),0]+10**gals[N.arange(jstart,jend),1])/(2.*hval*hval)
-    phi  = gals[N.arange(jstart,jend),2]*hval*hval*hval
-    phip = phim = gals[N.arange(jstart,jend),3]*hval*hval*hval
+    mass = (10**gals[N.arange(jstart,jend),0]+10**gals[N.arange(jstart,jend),1])/2.
+    phi  = gals[N.arange(jstart,jend),2]
+    phip = phim = gals[N.arange(jstart,jend),3]
      #log will be later
     logm = N.log10(mass) 
     print "using Henriques z = %3.2f "%(zlist[jj])
@@ -783,10 +783,10 @@ def plot4tog(zcen=0.45,fname="galshort.dat",hval=0.7,omm=0.31,slopeval=0.,shiftv
       ismf = 6 #henriques #center of mass bin taken
       logm,phi,phip,phim,zhen = getphihen(zcen,i)
       if (logm[0]>1):
-         phi    *= hval*hval*hval
+         phi    *= hval*hval*hval #units [h/Mpc]^3
          phip   *= hval*hval*hval
          phim   *= hval*hval*hval
-         logm   -= 2*N.log10(hval)
+         logm   -= 2*N.log10(hval) #units [M*/h^2]
          ax[i%2,i/2].errorbar(logm,phi,yerr=[phim,phip],xerr=0.0,fmt=' ',marker=smarkerlist[ismf],color=scollist[ismf],label="%s z=%3.2f "%(smftype[ismf],zhen))
          smfflag[ismf]=1
          zminlist[ismf] = zhen
@@ -954,10 +954,10 @@ def plot4sep(zcen=0.45,fname="galshort.dat",hval=0.7,omm=0.31,slopeval=0.,shiftv
       ismf = 6 #henriques
       logm,phi,phip,phim,zhen = getphihen(zcen,i)
       if (logm[0]>1):
-      	 phi    *= hval*hval*hval
+      	 phi    *= hval*hval*hval #units [h/Mpc]^3
          phip   *= hval*hval*hval
          phim   *= hval*hval*hval
-         logm   -= 2*N.log10(hval)
+         logm   -= 2*N.log10(hval) #units [M*/h^2]
          ax.errorbar(logm,phi,yerr=[phim,phip],xerr=0.0,fmt=' ',marker=smarkerlist[ismf],color=scollist[ismf],label="%s z=%3.2f "%(smftype[ismf],zhen))
          smfflag[ismf]=1
          zminlist[ismf] = zhen
