@@ -26,6 +26,19 @@ compared to Behroozi, Wechsler, Conroy 2013 (fit using Mvir)
 
 Moster,Naab, White 2013 (fit using M200)
 
+To test use of the code,
+in the directory vsuite/example are the outputs from running
+
+runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,"example")
+
+with the file "inputstats_bolshoi_P_0.9947.dat", found at <a href="http://mwhite.berkeley.edu/vsuite_data">http://mwhite.berkeley.edu/vsuite_data/</a> .  
+(You must uncompress it first, it is 22M compressed.)
+
+If you run 
+runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,"tests")
+you can compare your outputs (just name it something besides "example", here I've chosen "tests").
+
+
 
 Again, if you use this program, please reference the papers and people who measured
 all of these data!!
