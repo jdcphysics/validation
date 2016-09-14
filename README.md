@@ -59,4 +59,4 @@ all, quiescent, star forming, and all 3 on one page, compared to several observa
 Behroozi,Wechsler,Conroy 2013 use Mvir
 Moster, Naab, White 2013 use M200
 
-More info available at the top of valid_suite.py and in Cohn 2016, to appear (hopefully very soon!)
+More info available at the top of valid_suite.py and in the appendix of Cohn 2016, http://arxiv.org/abs/1609.03956
