@@ -1,5 +1,26 @@
  validation
  
+ in codes/vsuite
+
+   code to compare several observations to simulated data with stellar mass and star formation rate, plus required data files (for observations)
+
+   generates 7 plots 
+
+4 plots are stellar mass functions:
+
+all, quiescent, star forming, and all 3 on one page, compared to several observations described below.
+(quiescent/star forming division at log sfr = -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1)+shiftval.  This is PRIMUS separation for slopeval=shiftval=0, i.e. Moustakas et al, 2013,  eq 2). many of the datasets use UVJ and are plotted as is for their star forming and quiescent galaxies.
+
+1 plot is stellar mass-sfr diagram [can be compared with e.g., Moustakas et al 2013, but not overplotted with it]
+
+1 plot is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
+
+1 plot is stellar mass to halo mass diagram, compared to Behroozi, Wechsler, Conroy 2013 and Moster, Naab, White 2013 fits.
+Behroozi,Wechsler,Conroy 2013 use Mvir and
+Moster, Naab, White 2013 use M200
+
+More info available at the top of valid_suite.py and in the appendix of Cohn 2016, http://arxiv.org/abs/1609.03956
+
  
  in codes/StellarMass/
  
@@ -40,23 +61,3 @@
          is 2015 BOOTES data, in same directory 
          (typed in table 8,9,10 of Beare et al 2015, arXiv:1511.01580)
 
-in codes/vsuite
-
-   code to compare several observations to simulated data with stellar mass and star formation rate, plus required data files (for observations)
-
-   generates 7 plots 
-
-4 plots are stellar mass functions:
-
-all, quiescent, star forming, and all 3 on one page, compared to several observations described below.
-(quiescent/star forming division at log sfr = -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1)+shiftval.  This is PRIMUS separation for slopeval=shiftval=0, i.e. Moustakas et al, 2013,  eq 2). many of the datasets use UVJ and are plotted as is for their star forming and quiescent galaxies.
-
-1 plot is stellar mass-sfr diagram [can be compared with e.g., Moustakas et al 2013, but not overplotted with it]
-
-1 plot is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
-
-1 plot is stellar mass to halo mass diagram, compared to Behroozi, Wechsler, Conroy 2013 and Moster, Naab, White 2013 fits
-Behroozi,Wechsler,Conroy 2013 use Mvir
-Moster, Naab, White 2013 use M200
-
-More info available at the top of valid_suite.py and in the appendix of Cohn 2016, http://arxiv.org/abs/1609.03956
