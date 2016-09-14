@@ -2,7 +2,7 @@ Please do email me if you have questions/corrections/suggestions.
 
 jcohn@berkeley.edu
 
-More documentation to appear soon, by J. Cohn on arxiv--please cite arXiv (to appear) and datasets below, at %%%%,  if you use this work.
+More documentation to appear soon, by J. Cohn on arxiv--please cite  http://arxiv.org/abs/1609.03956 and datasets below, at %%%%,  if you use this work.
    
 how to get plots:
 
