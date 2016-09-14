@@ -12,6 +12,7 @@ import matplotlib.mlab as mlab
 def comments():
     """
 Please do email me if you have questions!
+Appendix of http://arxiv.org/abs/1609.03956 has information on how to run this program if more documentation is needed.
     
 generate 7 plots using runsuite(): below.
 4 are stellar mass functions:
