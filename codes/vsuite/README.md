@@ -2,7 +2,7 @@ Please do email me if you have questions/corrections/suggestions.
 
 jcohn@berkeley.edu
 
-More documentation to appear soon, by J. Cohn on arxiv--please cite  http://arxiv.org/abs/1609.03956 and datasets below, at %%%%,  if you use this work.
+More documentation is in  http://arxiv.org/abs/1609.03956 (by J Cohn).  Please reference that paper <b>and datasets below</b>, at %%%%,  if you use this work.
    
 how to get plots:
 
@@ -20,7 +20,7 @@ Moustakas et al eq 2), although many of the observational papers listed use UVJ.
 
 3. 1 is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
 
-4. 1 is stellar mass to halo mass diagram for central galaxies
+4. 1 is stellar mass to halo mass diagram 
 
 compared to Behroozi, Wechsler, Conroy 2013 (fit using Mvir)
 
