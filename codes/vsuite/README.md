@@ -26,7 +26,7 @@ compared to Behroozi, Wechsler, Conroy 2013 (fit using Mvir)
 
 Moster,Naab, White 2013 (fit using M200)
 
-To test use of the code,
+<b>To test use of the code</b><br>
 in the directory vsuite/example are the outputs from running
 
 runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,"example")
@@ -38,6 +38,16 @@ If you run
 runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,"tests")
 you can compare your outputs (just name it something besides "example", here I've chosen "tests").
 
+To get just stellar mass functions at a given redshift zchoose from observations (all, quiescent and star forming)
+
+runsuite(zchoose,"inputstats_short.dat",0.678,0.31,0,0,250,"justobs") 
+will produce 4 files called smf4sims[stuff]justobs.pdf
+--giving observational stellar mass function data at redshift zchoose for
+all, quiescent and starforming
+with the hubble constant 0.678 and omega_m 0.31
+(other figures will be produced but won't have much useful stuff with only 4 galaxies)
+stellar mass to halo mass reads off redshift from file, so will have to change column 4 (5th column) to get M*(Mh) for other redshifts
+besides the default redshift 0.
 
 
 Again, if you use this program, please reference the papers and people who measured
@@ -45,7 +55,7 @@ all of these data!!
 They are listed below at "%%%"
 
 
-USAGE:
+<b>USAGE:</b><br>
 runsuite(zcen, "inputfile.dat",hval,omm,slopeval,shiftval, boxside,runname,delz,ramin,ramax,decmin,decmax):
 
 zcen is central redshift
