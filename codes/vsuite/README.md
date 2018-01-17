@@ -67,9 +67,9 @@ hval  = hubble constant
 
 omm = omega_matter (e.g. 0.31)
 
-slopeval = in sfr-M* bimodal diagram, **change in** slope of line to separate star-forming and quiescent from PRIMUS
+slopeval = in sfr-M* bimodal diagram, **change in** slope of line to separate star-forming and quiescent from PRIMUS - for simplicity can set to 0.
 
-shiftval = change in shift of line between star forming and quiescent from PRIMUS
+shiftval = change in shift of line between star forming and quiescent from PRIMUS -for simplicity can set to 0.
 
 PRIMUS starforming and quiescent split by: 
 
