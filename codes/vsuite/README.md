@@ -80,6 +80,7 @@ boxside = in Mpc/h for fixed time, any negative number if light cone
 runname = string, such as "run0"
 
 if lightcone, delz,ramin,ramax,decmin,decmax listed next.
+you do not need ra or dec if you are not using a lightcone, and if you are in a fixed time box, all galaxies have the same z
 
 if fixed time these arguments (delz, ramin, ramax, decmin, decmax)
 are ignored and are not needed.
@@ -98,9 +99,9 @@ log10 M* [M_o]
 
 sfr units are per yr (not gyr)
 
- ra, dec the usual
+ ra, dec the usual --**only needed if you are doing a lightcone, set to 0 or anything you want otherwise**
 
- zred = redshift
+ zred = redshift --**for a fixed box, this is the box redshift**
 
 ifsat = 0 for central, 1 for sat
 
