@@ -1,6 +1,6 @@
  validation
  
- in codes/vsuite
+ **in codes/vsuite**
 
    code to compare several observations to simulated data with stellar mass and star formation rate, plus required data files (for observations)
 
@@ -22,7 +22,7 @@ Moster, Naab, White 2013 use M200
 More info available at the top of valid_suite.py and in the appendix of Cohn 2016, http://arxiv.org/abs/1609.03956
 
  
- in codes/StellarMass/
+ in **codes/StellarMass/**
  
    code to compare simulated data stellar mass function with observed
    stellar mass function from PRIMUS or SDSS-GALEX, in several redshift bins from 0.01-1.0
@@ -41,7 +41,7 @@ More info available at the top of valid_suite.py and in the appendix of Cohn 201
          is 2013 PRIMUS data, in same directory 
          (typed in table 4 of Moustakas et al 2013, arXiv:1301.1688v1)
 
- in codes/Bband/
+ in **codes/Bband/**
  
    code to compare simulated data B band luminosity function with observed
    stellar mass function from BOOTS, in several redshift bins from 0.2-1.1
