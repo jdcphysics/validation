@@ -68,8 +68,10 @@ hval  = hubble constant
 omm = omega_matter (e.g. 0.31)
 
 slopeval = in sfr-M* bimodal diagram, **change in** slope of line to separate star-forming and quiescent from PRIMUS - for simplicity can set to 0.
-
+   you can iterate, changing slopeval to get the dividing line between star forming and quiescent galaxies in the right place for your sample's mstar-sfr relation.  this will also change which galaxies are used for star forming and quiescent in the stellar mass functions.
+   
 shiftval = change in shift of line between star forming and quiescent from PRIMUS -for simplicity can set to 0.
+  again, you can iterate, changing slopeval to get the dividing line between star forming and quiescent galaxies in the right place for your sample's mstar-sfr relation.  this will also change which galaxies are used for star forming and quiescent in the stellar mass functions.
 
 PRIMUS starforming and quiescent split by: 
 
@@ -89,7 +91,7 @@ are ignored and are not needed.
  files needed:
 
 
- from your simulation: requires "inputfile.dat" in the form of
+ from your simulation: requires "inputfile.dat" in the form of 
 
  log10 m* (0) sfr (1), ra (2), dec (3), zred(4), ifsat (5) log10 m_halo (6)
 
@@ -103,13 +105,13 @@ sfr units are per yr (not gyr)
 
  zred = redshift --**for a fixed box, this is the box redshift**
 
-ifsat = 0 for central, 1 for sat
+ifsat = 0 for central, 1 for sat --**if you don't have this, just make everything a 0**
 
- m_halo = halo mass (Mvir, [M_o])
+ m_halo = halo mass (Mvir, [M_o]) --**if you don't have this, just pick some convenient halo mass**
 
 Comparisons are made with data files, listed below and in this directory: 
 
---note that aside from (1),(5), (6), these were copied from tables and plots,
+--note that aside from (1),(5), (6), these data files were copied by hand from tables and plots,
 please let me know if you find errors!  thank you.
 
 1. moustakas_z%s.smf,
