@@ -44,7 +44,6 @@ slopeval = in sfr-M* bimodal diagram, **change in** slope of line to
 separate star-forming and quiescent from PRIMUS
 shiftval = change in shift of line between star forming and quiescent
  from PRIMUS
- for simplicity, can set slopeval=shiftval=0. as it is just a line on the m*-sfr plot
 
 PRIMUS starforming and quiescent split by: 
 log SFR = log sfrmin -0.49 + (0.65+slopeval) (logM* - 10) +1.07 *(z-0.1) + shiftval 
