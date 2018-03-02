@@ -34,6 +34,11 @@ runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,
 with the file "inputstats_bolshoi_P_0.9947.dat", found at <a href="http://mwhite.berkeley.edu/vsuite_data">http://mwhite.berkeley.edu/vsuite_data/</a> .  
 (You must uncompress it first, it is 22M compressed.)
 
+There is also "inputstats_Illustris-1_z0.txt" from D. Nelson (thank you!), for the Illustris 1 simulation, and its figures.
+To get these, run
+runsuite(0., "inputstats_Illustris-1_z0.txt",0.704,0.31,0.8,-0.7,75,"illustris")
+
+The slopeval and shiftval were found by looking at the mstarsfr plot and running repeatedly.  
 If you run 
 runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,"tests")
 you can compare your outputs (just name it something besides "example", here I've chosen "tests").
