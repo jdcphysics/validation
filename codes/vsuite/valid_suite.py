@@ -1216,7 +1216,7 @@ def plotboxwhisker_mult(outid="thisrun",fname="inputfile.dat",zcen=0.45,runname=
     ax.xaxis.set_major_locator(majorLocator)
     ax.xaxis.set_major_formatter(majorFormatter)
     ax.xaxis.set_minor_locator(minorLocator)
-    ax.legend(loc=1,fontsize=12,frameon=False)
+    ax.legend(fontsize=12,frameon=False)
     plt.tight_layout()
     plt.savefig("stellar_halo_noratio_%s_%s.pdf"%(outid,runname))
     plt.close("all")
