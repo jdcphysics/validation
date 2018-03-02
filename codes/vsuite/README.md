@@ -2,7 +2,7 @@ Please do email me if you have questions/corrections/suggestions.
 
 jcohn@berkeley.edu
 
-More documentation to appear soon, by J. Cohn on arxiv--please cite  http://arxiv.org/abs/1609.03956 and datasets below, at %%%%,  if you use this work.
+More documentation is in  http://arxiv.org/abs/1609.03956 (by J Cohn).  Please reference that paper <b>and datasets below</b>, at %%%%,  if you use this work.
    
 how to get plots:
 
@@ -20,13 +20,13 @@ Moustakas et al eq 2), although many of the observational papers listed use UVJ.
 
 3. 1 is ssfr in 4 stellar mass bins* (no cut on ra, dec for this)
 
-4. 1 is stellar mass to halo mass diagram for central galaxies
+4. 1 is stellar mass to halo mass diagram 
 
 compared to Behroozi, Wechsler, Conroy 2013 (fit using Mvir)
 
 Moster,Naab, White 2013 (fit using M200)
 
-To test use of the code,
+<b>To test use of the code</b><br>
 in the directory vsuite/example are the outputs from running
 
 runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,"example")
@@ -38,6 +38,16 @@ If you run
 runsuite(1/0.9947-1.,"inputstats_bolshoi_P_0.9947.dat",0.678,0.31,0.15,-0.8,250,"tests")
 you can compare your outputs (just name it something besides "example", here I've chosen "tests").
 
+To get just stellar mass functions at a given redshift zchoose from observations (all, quiescent and star forming)
+
+runsuite(zchoose,"inputstats_short.dat",0.678,0.31,0,0,250,"justobs") 
+will produce 4 files called smf4sims[stuff]justobs.pdf
+--giving observational stellar mass function data at redshift zchoose for
+all, quiescent and starforming
+with the hubble constant 0.678 and omega_m 0.31
+(other figures will be produced but won't have much useful stuff with only 4 galaxies)
+stellar mass to halo mass reads off redshift from file, so will have to change column 4 (5th column) to get M*(Mh) for other redshifts
+besides the default redshift 0.
 
 
 Again, if you use this program, please reference the papers and people who measured
@@ -45,7 +55,7 @@ all of these data!!
 They are listed below at "%%%"
 
 
-USAGE:
+<b>USAGE:</b><br>
 runsuite(zcen, "inputfile.dat",hval,omm,slopeval,shiftval, boxside,runname,delz,ramin,ramax,decmin,decmax):
 
 zcen is central redshift
@@ -57,9 +67,11 @@ hval  = hubble constant
 
 omm = omega_matter (e.g. 0.31)
 
-slopeval = in sfr-M* bimodal diagram, **change in** slope of line to separate star-forming and quiescent from PRIMUS
-
-shiftval = change in shift of line between star forming and quiescent from PRIMUS
+slopeval = in sfr-M* bimodal diagram, **change in** slope of line to separate star-forming and quiescent from PRIMUS - for simplicity can set to 0.
+   you can iterate, changing slopeval to get the dividing line between star forming and quiescent galaxies in the right place for your sample's mstar-sfr relation.  this will also change which galaxies are used for star forming and quiescent in the stellar mass functions.
+   
+shiftval = change in shift of line between star forming and quiescent from PRIMUS -for simplicity can set to 0.
+  again, you can iterate, changing slopeval to get the dividing line between star forming and quiescent galaxies in the right place for your sample's mstar-sfr relation.  this will also change which galaxies are used for star forming and quiescent in the stellar mass functions.
 
 PRIMUS starforming and quiescent split by: 
 
@@ -70,6 +82,7 @@ boxside = in Mpc/h for fixed time, any negative number if light cone
 runname = string, such as "run0"
 
 if lightcone, delz,ramin,ramax,decmin,decmax listed next.
+you do not need ra or dec if you are not using a lightcone, and if you are in a fixed time box, all galaxies have the same z
 
 if fixed time these arguments (delz, ramin, ramax, decmin, decmax)
 are ignored and are not needed.
@@ -78,7 +91,7 @@ are ignored and are not needed.
  files needed:
 
 
- from your simulation: requires "inputfile.dat" in the form of
+ from your simulation: requires "inputfile.dat" in the form of 
 
  log10 m* (0) sfr (1), ra (2), dec (3), zred(4), ifsat (5) log10 m_halo (6)
 
@@ -88,17 +101,17 @@ log10 M* [M_o]
 
 sfr units are per yr (not gyr)
 
- ra, dec the usual
+ ra, dec the usual --**only needed if you are doing a lightcone, set to 0 or anything you want otherwise**
 
- zred = redshift
+ zred = redshift --**for a fixed box, this is the box redshift**
 
-ifsat = 0 for central, 1 for sat
+ifsat = 0 for central, 1 for sat --**if you don't have this, just make everything a 0**
 
- m_halo = halo mass (Mvir, [M_o])
+ m_halo = halo mass (Mvir, [M_o]) --**if you don't have this, just pick some convenient halo mass**
 
 Comparisons are made with data files, listed below and in this directory: 
 
---note that aside from (1),(5), (6), these were copied from tables and plots,
+--note that aside from (1),(5), (6), these data files were copied by hand from tables and plots,
 please let me know if you find errors!  thank you.
 
 1. moustakas_z%s.smf,
