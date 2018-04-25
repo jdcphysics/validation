@@ -160,6 +160,9 @@ http://arxiv.org/abs/1001.0015
 imf: salpeter,kroupa,chabrier
 To rescale stellar masses from Chabrier or Kroupa to Salpeter IMF,
 we divide by constant factors 0.61 and 0.66, respectively. Madau and Dickinson, 2014,Cosmic Star Formation History, http://arxiv.org/abs/1403.0007, page 14
+See also conversions in Rodriguez-Puebla, A., Primack, JR., Avila-Reese, V., Faber, S.M.,2017,MNRAS, 470,651, arxiv:1703.04542, Eq. 38,
+MBC03 = MBC07 + 0.13 = MP,0.1 − 0.05 =
+= MP,z +0.03 = MM05 +0.2 = MFSPS −0.05.
     """
 
 
